@@ -1,0 +1,72 @@
+body {
+    font-family: sans-serif;
+}
+
+.app {
+    width: 100px;
+    height: 50px;
+    background: red;
+}
+
+.obj {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(0, 89, 255);
+    position: absolute;
+}
+#hnd{
+    width: 200px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    /* animation: rotate-stick 2s infinite linear; */
+}
+
+
+
+
+.stick {
+    width: 200px;
+    height: 2px;
+    background-color: black;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    transform-origin: 0 0;
+    animation: rotate-stick 7s infinite linear;
+    transition: 5s;
+    transition-duration: 5s;
+}
+
+@keyframes rotate-stick {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.rotate {
+    animation-name: rotate-stick;
+    animation-duration: 2s;
+    /* Change this value to adjust the speed */
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-stick {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(var(--angle, 0));
+    }
+}
